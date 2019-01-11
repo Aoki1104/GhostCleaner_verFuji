@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 84c00397efc9ff7489c0147d4ca6b050
+timeCreated: 1534222841
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: iroha-mochi
+  fontNames:
+  - iroha-mochi
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
