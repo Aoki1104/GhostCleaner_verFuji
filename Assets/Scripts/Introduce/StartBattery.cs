@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//ゲーム開始の合図に使われるスクリプト
+//バッテリーを2秒間貯めるアニメーションを流す
 public class StartBattery : MonoBehaviour {
+
 	[SerializeField]
 	float MAX = 2.5f;
 	float Current;

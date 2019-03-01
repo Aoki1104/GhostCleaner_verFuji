@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//没案:髪の毛
 public class Hair_Introduction : MonoBehaviour {
 
     [SerializeField]

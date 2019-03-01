@@ -2,43 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//最後のゴーストが吸い込まれて上昇しているシーンに使われているスクリプト
 public class Introduce_Gohast : MonoBehaviour {
     
-    //ゴーストの行動パターン
-    public enum State
-    {
-        Standing,          //棒立ち
-        Action,            //特殊アクション    
-        Walk,              //歩く
-        Capture            //捕獲
-    }
-
-    public State IntroduceState;
-
     [SerializeField]
-    private float speed;
+    private float speed;    //上がっていくスピード
 
-    private GameObject Gohast;
+    private GameObject Gohast;  
     private Rigidbody rigid;
     private Animator anim; //ゴーストのアニメーション
-    private Vector3 Initial_Position;
-    private string beforestate;
+    private Vector3 Initial_Position;   //初期ポジションを格納する変数
 
     // Use this for initialization
     void Start () {
-        beforestate = "None";
         rigid = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-        IntroduceState = State.Standing;
-   anim.Play("ghost_capture");
+        anim.Play("ghost_capture");
         Initial_Position = this.gameObject.transform.position;
-
     }
 	
-	// Update is called once per frame
-	void Update () {
-        
-	}
 
     private void FixedUpdate()
     {
@@ -48,11 +30,11 @@ public class Introduce_Gohast : MonoBehaviour {
 
     private IEnumerator DestroyGohast()
     {
-       // iTween.MoveTo(this.gameObject, iTween.Hash("y", 248.0f, "time", time-0.5));
         yield return new WaitForSeconds(5.0f);
         Destroy(this);
     }
 
+    //見えない壁にぶつかったら初期化
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Wall")
